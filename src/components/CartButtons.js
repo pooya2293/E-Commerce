@@ -58,7 +58,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    font-size: 0.75rem;
+    font-size: 0.55rem;
     color: var(--clr-white);
     padding: 12px;
   }
@@ -71,6 +71,7 @@ const Wrapper = styled.div`
     cursor: pointer;
     color: var(--clr-grey-1);
     letter-spacing: var(--spacing);
+    margin-left: 20px;
     svg {
       margin-left: 5px;
     }
