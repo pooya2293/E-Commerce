@@ -198,6 +198,7 @@ p {
   margin-right: auto;
 }
 .page-100 {
+  /* show all screen view */
   min-height: calc(100vh - 10rem);
   padding: 5rem 0;
 }
