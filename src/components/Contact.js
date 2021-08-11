@@ -14,10 +14,6 @@ const Contact = () => {
           method="POST">
             <input type="email" className='form-input' placeholder='enter your e-mail' name="_replyto" />
             <button type='submit' className='submit-btn'>subscribe</button>
-            <label>
-      Your message:
-      <textarea name="message"></textarea>
-      </label>
           </form>
         </div>
       </div>
