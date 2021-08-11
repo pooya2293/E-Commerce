@@ -3,7 +3,31 @@ import styled from 'styled-components'
 import { services } from '../utils/constants'
 
 const Services = () => {
-  return <h4>services </h4>
+  return (
+    <Wrapper>
+      <div className="section-center">
+        <article className="header">
+          <h3>
+            custome furniture<br/>
+            built only for you
+          </h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Voluptate ullam consequuntur dicta optio cum saepe sunt numquam exercitationem quod adipisci officiis, officia, fugiat, atque totam.</p>
+        </article>
+        <div className="services-center">
+          {services.map((service)=>{
+            const {id,icon,title,text} = service
+            return(
+              <article className="service" key={id}>
+                <span className="icon">{icon}</span>
+                <h4>{title}</h4>
+                <p>{text}</p>
+              </article>
+            )
+          })}
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
@@ -26,12 +50,13 @@ const Wrapper = styled.section`
   .services-center {
     margin-top: 4rem;
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2.5rem;
   }
   .service {
     background: var(--clr-primary-7);
     text-align: center;
-    padding: 2.5rem 2rem;
+    padding: 2rem 1.5rem;
     border-radius: var(--radius);
     p {
       color: var(--clr-primary-2);
@@ -57,7 +82,7 @@ const Wrapper = styled.section`
       grid-template-columns: 1fr 1fr;
     }
   }
-  @media (min-width: 576px) {
+  @media (min-width: 600px) {
     .services-center {
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     }
