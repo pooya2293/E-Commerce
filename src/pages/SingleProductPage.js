@@ -15,7 +15,24 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const SingleProductPage = () => {
-  console.log(useParams())//show id of singleProduct that i click it
+  const {id} = useParams()
+  const {
+    single_product_loading: loading,
+    single_product_error: error,
+    single_product: product,
+    fetchSingleProduct
+  } = useProductsContext()
+
+  useEffect(()=>{
+    fetchSingleProduct(`${url}${id}`)
+  },[id])
+
+  if(loading){
+    return <Loading />
+  }
+  if(error){
+    return <Error />
+  }
   return <h4>single product page</h4>
 }
 
