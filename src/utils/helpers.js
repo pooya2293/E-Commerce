@@ -1,10 +1,7 @@
 export const formatPrice = (number) => {
-	const newNumber = Intl.NumberFormat('en-US',{
-		style: 'currency',
-		currency: 'USD',
-		}).format(number / 100)
+	const newNumber = Intl.NumberFormat('fa-IR').format(number) + ' ت'
 
-	console.log(newNumber)//$599.99 //$399.99
+	console.log(newNumber)
 	return newNumber
 }
 
