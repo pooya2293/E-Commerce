@@ -15,6 +15,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const SingleProductPage = () => {
+  console.log(useParams())//show id of singleProduct that i click it
   return <h4>single product page</h4>
 }
 
