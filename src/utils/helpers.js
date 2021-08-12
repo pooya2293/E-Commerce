@@ -1,5 +1,8 @@
 export const formatPrice = (number) => {
-	return new Intl.NumberFormat('fa-IR', {currency: 'IRR', style: 'currency'}).format(number * 10)
+	const newNumber = Intl.NumberFormat('fa-IR').format(number + 1) + ' تومان'
+
+	console.log(newNumber)//۴۰٬۰۰۰ تومان  //۶۰٬۰۰۰ تومان
+	return newNumber
 }
 
 export const getUniqueValues = () => {}
