@@ -1,7 +1,10 @@
 export const formatPrice = (number) => {
-	const newNumber = Intl.NumberFormat('fa-IR').format(number) + ' تومان'
+	const newNumber = Intl.NumberFormat('en-US',{
+		style: 'currency',
+		currency: 'USD',
+		}).format(number / 100)
 
-	console.log(newNumber)//۵۹٬۹۹۹ تومان //۳۹٬۹۹۹ تومان
+	console.log(newNumber)//$599.99 //$399.99
 	return newNumber
 }
 
