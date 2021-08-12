@@ -1,5 +1,5 @@
 export const formatPrice = (number) => {
-	const newNumber = Intl.NumberFormat('fa-IR').format(number + 1) + ' تومان'
+	const newNumber = Intl.NumberFormat('fa-IR',{ maximumSignificantDigits: 3 }).format(number) + ' تومان'
 
 	console.log(newNumber)//۴۰٬۰۰۰ تومان  //۶۰٬۰۰۰ تومان
 	return newNumber
