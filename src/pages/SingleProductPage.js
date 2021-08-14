@@ -26,11 +26,10 @@ const SingleProductPage = () => {
   } = useProductsContext()
 
   useEffect(()=>{
-    fetchSingleProduct(`s${url}${id}`)
+    fetchSingleProduct(`${url}${id}`)
   },[id])
 
   useEffect(()=>{
-    console.log(error)
     if(error) {
       setTimeout(()=>{
         history.push('/')
@@ -38,14 +37,19 @@ const SingleProductPage = () => {
     }
   },[error])
   
-  console.log(product)
   if(loading){
     return <Loading />
   }
   if(error){
     return <Error />
   }
-  return <h4>single product page</h4>
+  const {name,category,colors,price,company,description,images,stock,stars,reviews,id:sku} = product;
+
+  return (
+    <Wrapper>
+      <PageHero title={name} product />
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.main`
