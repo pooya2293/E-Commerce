@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const ProductImages = () => {
+const ProductImages = ({ images }) => {
+  const [main, setMain] = useState(images[0])//HP:Cannot read property '0' of undefined
+  console.log(main)//undefined
   return <h4>product images</h4>
 }
 
