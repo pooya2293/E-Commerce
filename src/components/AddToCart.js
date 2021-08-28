@@ -11,11 +11,23 @@ const AddToCart = ({ product }) => {
   const [mainColor,setMainColor] = useState(colors[0]);
   const [amount,setAmount] = useState(1);
 
-  const increas = (oldNum)=> {
-    setAmount((oldNum)=>oldNum + 1 >= stock ? stock : oldNum + 1);
+  const increas = ()=> {
+    setAmount((oldNum)=>{
+      let tempNum = oldNum + 1
+      if(tempNum >= stock){
+        tempNum = stock;
+      }
+      return tempNum
+    });
   }
-  const decreas = (oldNum)=>{
-    setAmount((oldNum)=>oldNum - 1 <= 0 ? oldNum : oldNum - 1)
+  const decreas = ()=>{
+    setAmount((oldNum)=>{
+      let tempNum = oldNum - 1
+      if(tempNum < 1){
+        tempNum = 1;
+      }
+      return tempNum
+    });
   }
 
   return (
