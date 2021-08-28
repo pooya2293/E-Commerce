@@ -8,6 +8,7 @@ import {
   FILTER_PRODUCTS,
   CLEAR_FILTERS,
 } from '../actions'
+import { useFilterContext } from '../context/filter_context'
 
 const filter_reducer = (state, action) => {
   if(action.type === LOAD_PRODUCTS){
@@ -17,7 +18,13 @@ const filter_reducer = (state, action) => {
       all_products:[...action.payload]
     }
   }
-  return state
+
+  if(action.type === SET_LISTVIEW){
+    return {...state,grid_view:false }
+  }
+  if(action.type === SET_GRIDVIEW){
+    return {...state,grid_view:true }
+  }
   throw new Error(`No Matching "${action.type}" - action type`)
 }
 
