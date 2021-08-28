@@ -23,9 +23,6 @@ export const FilterProvider = ({ children }) => {
   const {products} = useProductsContext();
   const [state,dispatch] = useReducer(reducer,initialState);
 
-  /**
-   * [cuse we cant path directly products to initialState]
-   */
   useEffect(()=>{
     dispatch({ type:LOAD_PRODUCTS,payload:products })
   },[products])
