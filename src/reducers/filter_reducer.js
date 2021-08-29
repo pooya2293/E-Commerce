@@ -12,10 +12,14 @@ import { useFilterContext } from '../context/filter_context'
 
 const filter_reducer = (state, action) => {
   if(action.type === LOAD_PRODUCTS){
+    let maxPrice = action.payload.map((p)=>p.price)//seperate all of price in array
+    maxPrice = Math.max(...maxPrice)//seperate max of price to all of price
+
     return {
       ...state,
       filtered_products: [...action.payload],
-      all_products:[...action.payload]
+      all_products:[...action.payload],
+      filters:{...state.filters,max_price:maxPrice,price:maxPrice}
     }
   }
 
