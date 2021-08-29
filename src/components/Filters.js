@@ -25,6 +25,10 @@ const Filters = () => {
   const companies = getUniqueValues(all_products, 'company');
   const colors = getUniqueValues(all_products, 'colors');
 
+console.log(categories);//["all", "office", "living room", "kitchen", "bedroom", "dining", "kids"]
+console.log(companies);//["all", "marcos", "liddy", "ikea", "caressa"]
+console.log(colors);//["all", Array(3), Array(2), Array(2), Array(3), Array(1), Array(3), Array(2), Array(2), Array(2), Array(3), Array(2), Array(3), Array(1), Array(1), Array(1), Array(2), Array(1), Array(2), Array(1), Array(2), Array(1), Array(2), Array(2)]
+
   return (
     <Wrapper>
       <div className="content">
