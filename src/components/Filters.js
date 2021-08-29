@@ -23,7 +23,7 @@ const Filters = () => {
   return (
     <Wrapper>
       <div className="content">
-        <form onSubmite={(e)=>e.preventDefault()}>
+        <form onSubmit={(e)=>e.preventDefault()}>
           {/*search input*/}
           <div className="form-control">
             <input 
