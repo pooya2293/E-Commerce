@@ -5,5 +5,9 @@ export const formatPrice = (number) => {
 
 export const getUniqueValues = (data,type) => {
 	let uniqe = data.map((item)=>item[type])
-	console.log(uniqe) //seperate all type of data in 3 difrent array : category,company,color
+
+	if(type === 'colors'){
+		uniqe = uniqe.flat();
+	}
+	return ['all', ...new Set(uniqe)]
 }

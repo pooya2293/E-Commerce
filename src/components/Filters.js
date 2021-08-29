@@ -27,7 +27,7 @@ const Filters = () => {
 
 console.log(categories);//["all", "office", "living room", "kitchen", "bedroom", "dining", "kids"]
 console.log(companies);//["all", "marcos", "liddy", "ikea", "caressa"]
-console.log(colors);//["all", Array(3), Array(2), Array(2), Array(3), Array(1), Array(3), Array(2), Array(2), Array(2), Array(3), Array(2), Array(3), Array(1), Array(1), Array(1), Array(2), Array(1), Array(2), Array(1), Array(2), Array(1), Array(2), Array(2)]
+console.log(colors);//["all", "#ff0000", "#00ff00", "#0000ff", "#000", "#ffb900"]
 
   return (
     <Wrapper>
