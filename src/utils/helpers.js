@@ -3,4 +3,7 @@ export const formatPrice = (number) => {
 	return newNumber
 }
 
-export const getUniqueValues = () => {}
+export const getUniqueValues = (data,type) => {
+	let uniqe = data.map((item)=>item[type])
+	console.log(uniqe) //seperate all type of data in 3 difrent array : category,company,color
+}
