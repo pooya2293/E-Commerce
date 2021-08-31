@@ -78,15 +78,14 @@ const filter_reducer = (state, action) => {
       // search filter
       if(text){
         tempProducts = tempProducts.filter((product)=>{
-          // return product.name.toLowerCase().startsWith(text)
-          return product.name.indexOf(text) !== -1
-        });
-        // if(tempProducts.length === 0 ){
-          // tempProducts = [...all_products];
-          // tempProducts = tempProducts.filter((product)=>{
-            // return product.name.indexOf(text) !== -1
-          // }); 
-        // }
+          return product.name.toLowerCase().startsWith(text)
+        })
+        if(tempProducts.length === 0 ){
+          tempProducts = [...all_products];
+          tempProducts = tempProducts.filter((product)=>{
+            return product.name.indexOf(text) !== -1
+          }); 
+        }
       }
       return{...state,filtered_products: tempProducts}
     }
