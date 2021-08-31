@@ -75,7 +75,8 @@ const filter_reducer = (state, action) => {
       const {text,company,category,color,max_price,min_price,price,shipping}= state.filters;
       let tempProducts = [...all_products];
 
-      // search filter
+      //filter
+      //text
       if(text){
         tempProducts = tempProducts.filter((product)=>{
           return product.name.toLowerCase().startsWith(text)
@@ -87,6 +88,20 @@ const filter_reducer = (state, action) => {
           }); 
         }
       }
+
+      // category
+      if(category !== 'all'){
+        tempProducts = tempProducts.filter((product)=>{
+          return product.category === category
+        })
+      }
+      // company
+      if(company !== 'all'){
+        tempProducts = tempProducts.filter((product)=>{
+          return product.company === company
+        })
+      }
+
       return{...state,filtered_products: tempProducts}
     }
 
