@@ -38,7 +38,7 @@ const Filters = () => {
               className="search-input"
               value={text}
               onChange={updateFilters}
-              autocomplete="off"
+              autoComplete="off"
             />
           </div>
           {/*end search input*/}
