@@ -51,9 +51,25 @@ export const CartProvider = ({ children }) => {
     dispatch({ type:CLEAR_CART })
   }
 
+  // calcute totale items
+  const calcTotalItems = ()=>{
+    let tempTotalAmount = 0;
+    state.cart.map((item)=>{
+      tempTotalAmount += item.amount
+    })
+    state.total_items = tempTotalAmount;
+  }
+
+  // cart total amount
+  const cartTotals = ()=>{
+    dispatch({ type:COUNT_CART_TOTALS })
+  }
+
   useEffect(()=>{
-    localStorage.setItem('cart', JSON.stringify(state.cart)) 
-  },[state.cart])
+    localStorage.setItem('cart', JSON.stringify(state.cart));
+    calcTotalItems();
+    cartTotals();
+  },[state.cart , state.cart.amount])
 
   return (
     <CartContext.Provider value={{ ...state,addToCart,removeItem,toggleAmount,clearCart }}>{children}</CartContext.Provider>
